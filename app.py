@@ -8,8 +8,8 @@ app = Dash(__name__, title="PEF decontamination efficacy")
 server = app.server
 
 # Load your dataset
-script_dir = os.path.dirname(os.path.abspath(__file__))  # Folder where eda_pef.py is located
-excel_file_path = os.path.join(script_dir, "PEFDatabase_JanH_ManuscriptMerged.xlsx")
+script_dir = os.path.dirname(os.path.abspath(__file__))
+excel_file_path = os.path.join(script_dir, "20250509_pef_database_v01.xlsx")
 df = pd.read_excel(excel_file_path, sheet_name='PEFInactivationData')
 
 # Rename the columns
@@ -60,15 +60,6 @@ app.layout = html.Div([
         value=[min_est_energy_input_2_J_ml_rounded, max_est_energy_input_2_J_ml_rounded]
     ),
 
-    # Slider for filtering by Food pH
-    #html.P("Filter by pH:"),
-    #dcc.RangeSlider(
-    #    id='Food pH-range-slider', 
-    #    min=df['Food pH'].min(), 
-    #    max=df['Food pH'].max(), 
-    #    value=[df['Food pH'].min(), df['Food pH'].max()]
-    #),
-
     # Dropdown for selecting matrix category values
     html.P("Select matrix category:"),
     dcc.Dropdown(
@@ -86,15 +77,6 @@ app.layout = html.Div([
         value=organism_grouped_values[0],
         multi=True
     )
-
-    # Dropdown for selecting matrix_acidity values
-    #html.P("Select matrix acidity:"),
-    #dcc.Dropdown(
-    #    id='matrix_acidity-dropdown', 
-    #    options=[{'label': i, 'value': i} for i in matrix_acidity_values], 
-    #    value=matrix_acidity_values[0],
-    #    multi=True
-    #)
 ])
 
 
@@ -129,10 +111,6 @@ def update_bar_chart(est_energy_input_2_J_ml_range,
             selected_matrix_categories if isinstance(selected_matrix_categories, list) 
             else [selected_matrix_categories]
         ) &
-        #df['matrix_acidity'].isin(
-        #    selected_matrix_acidities if isinstance(selected_matrix_acidities, list) 
-        #    else [selected_matrix_acidities]
-        #) &
         df['Microorganism'].isin(
             selected_organism_grouped if isinstance(selected_organism_grouped, list) 
             else [selected_organism_grouped]
