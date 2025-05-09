@@ -1,5 +1,6 @@
+pandas==2.2.2      # or the latest 2.x
 dash==2.14.1
 plotly==5.18.0
-pandas==1.5.3
-openpyxl          # engine for .xlsx
+openpyxl
 gunicorn
+# NumPy comes in automatically (>=2.0)
