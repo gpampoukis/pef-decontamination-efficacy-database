@@ -152,5 +152,7 @@ def update_bar_chart(est_energy_input_2_J_ml_range,
     return fig
 
 
-if __name__ == '__main__':
-    app.run_server(debug=True)
+if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", 8050))   # Render injects PORT
+    app.run_server(host="0.0.0.0", port=port, debug=False)
