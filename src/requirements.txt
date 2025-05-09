@@ -1,8 +1,5 @@
-### `requirements.txt`
-
-```text
 dash==2.14.1
 plotly==5.18.0
 pandas==1.5.3
-openpyxl
+openpyxl          # engine for .xlsx
 gunicorn
