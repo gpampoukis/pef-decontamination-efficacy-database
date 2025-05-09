@@ -47,7 +47,7 @@ max_est_energy_input_2_J_ml_rounded = round(df['Volumetric energy input (kJ/L)']
 
 # Define the layout of the Dash application
 app.layout = html.Div([
-    html.H4('Interactive plotting of the most important factors affecting PEF decontamination efficacy'),
+    html.H4('Interactive plotting of PEF decontamination efficacy'),
 
     dcc.Graph(id="scatter-plot"),
 
