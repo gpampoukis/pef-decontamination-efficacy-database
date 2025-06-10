@@ -20,11 +20,13 @@ df.rename(columns={
     'doi': 'DOI',
     'food_pH': 'Food pH',
     'organism_grouped': 'Microorganism',
-    'food_product': 'Specific matrix'
+    'food_product': 'Specific matrix',
+    'strain': 'Microbial strain'
 }, inplace=True)
 
 #print "NA" where pH value is missing
 df['Food pH'] = df['Food pH'].fillna("NA")
+df['Microbial strain'] = df['Microbial strain'].fillna("NA")
 
 # Convert 'actual_processing_temp_degree_cal' to numeric
 df['Volumetric energy input (kJ/L)'] = pd.to_numeric(df['Volumetric energy input (kJ/L)'])
@@ -133,8 +135,8 @@ def update_bar_chart(est_energy_input_2_J_ml_range,
         y="Decimal microbial reduction (-)",
         symbol="Matrix category",
         color="DOI",
-        hover_data=['Volumetric energy input (kJ/L)', 'Food pH', 'Matrix category', 
-                    'Microorganism', 'Specific matrix'],
+        hover_data=['Volumetric energy input (kJ/L)','Microorganism',
+                    'Microbial strain', 'Specific matrix', 'Food pH', 'Matrix category'],
         symbol_sequence=symbol_sequence,
         color_discrete_sequence=color_sequence,
         trendline="ols",
