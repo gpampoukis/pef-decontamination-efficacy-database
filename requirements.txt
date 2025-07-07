@@ -1,8 +1,6 @@
 numpy>=1.24,<2      # 1.26.4 works and has wheels
 scipy>=1.10,<2.2    # lets pip pick the newest wheel that exists, e.g. 1.16.0
 statsmodels==0.14.1 # needs SciPy and NumPy from the two lines above
-
-# the rest of your stack
 pandas==2.2.2
 dash==2.14.1
 plotly==5.18.0
