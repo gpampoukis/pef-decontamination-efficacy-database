@@ -1,6 +1,6 @@
-numpy==2.0.0             # dragged in automatically, but being explicit helps
-scipy<2.2                #  keeps _lazywhere available
-statsmodels==0.14.1      # as before
+numpy==1.26.4      # last NumPy 1.x (May 2024)
+scipy==1.13.4      # newest 1.x line (Apr 2025)
+statsmodels==0.14.1
 dash==2.14.1
 plotly==5.18.0
 openpyxl
