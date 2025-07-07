@@ -1,7 +1,7 @@
-pandas==2.2.2      # or the latest 2.x
+numpy==2.0.0             # dragged in automatically, but being explicit helps
+scipy<2.2                #  keeps _lazywhere available
+statsmodels==0.14.1      # as before
 dash==2.14.1
 plotly==5.18.0
 openpyxl
 gunicorn
-statsmodels==0.14.1 
-# NumPy comes in automatically (>=2.0)
